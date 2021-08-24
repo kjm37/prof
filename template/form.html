@@ -1,0 +1,157 @@
+
+
+{%extends "base.html"%}{% load static %}
+{%block content %}
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="">
+                            <div class="">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Profile Input</strong> Elements
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                           {%csrf_token%}
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">USERNAME</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p class="form-control-static">{{user.username}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Email</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p class="form-control-static">{{user.email}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Profile Picture</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="pic" class="form-control-file">
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Profesion</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="profesion" value="{{data.profesion}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Introduction</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="intro" id="textarea-input" rows="9" class="form-control">{{data.intro}}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Description</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="description" id="textarea-input" rows="9" class="form-control">{{data.description}}</textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Date of Birth</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="dob" value="{{date}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">City Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="city" value="{{data.city}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">University Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="university" value="{{data.university}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Website</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="website" value="{{data.website}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Age</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="age" value="{{data.age}}" class="form-control">
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Degree</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="degree" value="{{data.degree}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Contact NUmber</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="phone" value="{{data.phone}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+                                                <button type="reset" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-ban"></i> Reset
+                                                </button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                   
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {%endblock%}
+
+    

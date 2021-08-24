@@ -1,0 +1,61 @@
+
+
+{%extends "base.html"%}{% load static %}
+{%block content %}
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="">
+                            <div class="">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Profile Input</strong> Elements
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                           {%csrf_token%}
+                                            
+                                           
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Service Title</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="title" value="{{data.profesion}}" class="form-control">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Service Description</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="description" id="textarea-input" rows="9" class="form-control">{{data.intro}}</textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+                                                
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                   
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {%endblock%}
+
+    

@@ -1,0 +1,356 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Free Freelancer Bootstrap Template | Smarteyeapps.com</title>
+    <link rel="shortcut icon" href="{images/fav.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" />
+</head>
+
+    <body>
+       <!--########################### Header Starts Here ###################### -->
+        <div class="home-screen container-fluid">
+          <div class="home-cover">
+                <div id="menu-jk" class="header">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-md-3 logo">
+                               <img class="logo-wt" src="{% static 'assets/images/logo.png' %}" alt="">
+                               <img class="logo-gry" src="{% static 'assets/images/logo-gray.png' %}" alt="">
+
+                               <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                           </div>
+                           <div id="menu" class="col-md-9 d-none d-md-block">
+                               <ul>
+                                   <li><a href="#">Home</a></li>
+                                   <li><a href="#about_us">About Us</a></li>
+                                   <li><a href="#services">Services</a></li>
+                                   <li><a href="#skills">Skills</a></li>
+                                     <li><a href="{% url 'comment' %}">comments</a></li>
+                                    <li><a href="{% url 'skills' %}">My Skills</a></li>
+                                   <li><a href="{% url 'ser' %}">My Services</a></li>
+                                   <li><a href="{% url 'gallary' %}">My Gallary</a></li>
+                                   <li><a href="{% url 'form' %}">Update Profile</a></li>
+                                   <li><a href="{% url 'logout' %}">Logout</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+                <div class="container">
+                   <div class="row home-detail">
+                      <div class="col-md-5 animated bounceInLeft hom-img">
+                          {%if data.profile_pic%}
+                          <img src="{{data.profile_pic.url}}" alt="">
+                          {%else%}
+                          <img src="{% static 'assets/images/name.png' %}" alt="">
+                          {%endif%}
+                      </div>
+                      <div class="col-md-7 animated bounceInRight homexp">
+                           <h5>Hello I'm</h5>
+                           <h2>{{data.name}}</h2>
+                           <span>Professional <a >{{data.profesion}}</a> </span>
+                           <p>{{data.intro}}</p>
+
+                           <ul class="socil-icon">
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                </li>
+                           </ul>
+                       </div>
+                   </div>
+
+                </div>
+          </div>
+        </div>
+
+        <!--########################### About US Starts Here ###################### -->
+
+        <div id="about_us" class="about-us container-fluid">
+           <div class="container">
+               <div class="session-title row">
+                    <h2>About Me</h2>
+                    <p>{{data.intro}}</p>
+                    <div class="heading-line"></div>
+                </div>
+                <div class="about-row row">
+                   <div class="image-col col-md-4">
+                    {%if data.profile_pic%}
+                    <img src="{{data.profile_pic.url}}" alt="">
+                    {%else%}
+                    <img src="{% static 'assets/images/name.png' %}" alt="">
+                    {%endif%}
+                       <button class="btn btn-primary"><i class="fas fa-download"></i> Download CV</button>
+                   </div>
+                   <div class="detail-col col-md-8">
+                       <h2>{{data.name}}</h2>
+                        <h6>{{data.profesion}}</h6>
+                        <p>{{data.description}}</p>
+                          <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="info-list">
+                                    <ul>
+                                        <li><span>Birthday:</span>{{data.Dob}}</li>
+                                        <li><span>City:</span>{{data.city}}</li>
+                                        <li><span>Study:</span>{{data.university}}</li>
+                                        <li><span>Website:</span>{{data.website}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="info-list">
+                                    <ul>
+                                        <li><span>Age:</span>{{data.age}} Years</li>
+                                        <li><span>Degree:</span>{{data.degree}}</li>
+                                        <li><span>Mail:</span>{{data.email}}</li>
+                                        <li><span>Phone:</span>{{data.phone}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                   </div>
+
+
+
+                </div>
+           </div>
+
+        </div>
+
+           <!--########################### Services Starts Here ###################### -->
+
+          <div id="services"  class="services container-fluid">
+           <div class="container">
+               <div class="session-title row">
+                    <h2>Servcies I Provide</h2>
+                    <p>There are many variations of passages of Lorem Ipsum available Lorem Ipsum available but the majority</p>
+                    <div class="heading-line"></div>
+                </div>
+
+
+                <div class="services-row row">
+                    {% for i in services %}
+                    <div class="col-md-4 seric-div">
+                        <div class="service-card">
+                            <i class="far fa-file-image"></i>
+                            <h4>{{i.title}}</h4>
+                            <p>{{i.services_description}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
+
+              </div>
+        </div>
+
+        <!--########################### Skills Starts Here ###################### -->
+
+
+
+
+             <div id="skills" class="skills container-fluid">
+                  <h2>Technical Skill</h2>
+                 <div class="row">
+                     {% for i in technical_skills %}
+
+                     <div class="col-md-6 skii-div tech-skill">
+                         <div class="title">
+
+
+                         </div>
+
+                         <ul>
+                             <li>
+                                 <label for="">{{i.tech_name}}</label>
+                                     <div class="progress">
+                                       <div class="progress-bar bg-warning" role="progressbar" style="width: {{i.progress}}%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                     </div>
+                             </li>
+
+
+                         </ul>
+                     </div>
+
+
+                        {%endfor%}
+                 </div>
+             </div>
+
+
+
+
+         <!--  ************************* Testimonial  Starts Here ************************** -->
+
+     <section id="testimonial" class="customer-serv">
+            <div class="container">
+                <h2>Happy Customers</h2>
+                 {% for i in comment %}
+                <div class="row session-title">
+
+
+                </div>
+
+                <div class="row ro-clo">
+                    <div data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal" class="col-12  col-md-6 col-lg-4">
+                        <div class="shado-2 card-b">
+                            <p>{{i.message}}</p>
+                        </div>
+                        <div class="cust-det row">
+                            <div class="col-sm-3 col-3 img-circl">
+                                <img alt="" src="{% static 'assets/images/testimonial/member-01.jpg' %}">
+                            </div>
+                            <div class="col-sm-5 col-5 an-mtc no-padding">
+                                <b>{{i.name}}</b>
+                                <p>{{i.profession}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                {%endfor%}
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+    <!--  ************************* Gallery Starts Here ************************** -->
+        <div id="portfolio" class="gallery">
+           <div class="container">
+              <div class="session-title row">
+                    <h2>Portfolio</h2>
+                    <p>Take a look at some of our latest work</p>
+                    <div class="heading-line"></div>
+                </div>
+              <div class="row">
+
+
+        <div class="gallery-filter d-none d-sm-block">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">Finance</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Digital Marketing</button>
+            <button class="btn btn-default filter-button" data-filter="spray"> Money</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Business Alaysis</button>
+        </div>
+        <br/>
+
+
+        {%for i in gallary%}
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+                <img src="{{i.gallary.url}}" class="img-responsive">
+            </div>
+        {%endfor%}
+
+        </div>
+    </div>
+
+
+       </div>
+        <!-- ######## Gallery End ####### -->
+
+
+             <!--  ************************* Contact  Starts Here ************************** -->
+
+    <section id="cntact_us" class="contact-us-single">
+        <div class="row no-margin">
+            <div class="col-sm-6 no-padding">
+                 <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249759.19784092825!2d79.10145254589841!3d12.009924873581818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1448883859107"  height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div  class="col-sm-6 cop-ck">
+                <h2 >Contact Form</h2>
+                <form action="{% url 'message' %}" method="POST">
+                    {%csrf_token%}
+                    <div class="row cf-ro">
+                        <div  class="col-sm-3"><label>Enter Name :</label></div>
+                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                    </div>
+                    <div  class="row cf-ro">
+                        <div  class="col-sm-3"><label>Email Address :</label></div>
+                        <div class="col-sm-8"><input type="text" name="email" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                    </div>
+                     <div  class="row cf-ro">
+                        <div  class="col-sm-3"><label>Mobile Number:</label></div>
+                        <div class="col-sm-8"><input type="text" name="mobile" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                    </div>
+                     <div  class="row cf-ro">
+                        <div  class="col-sm-3"><label>Enter  Message:</label></div>
+                        <div class="col-sm-8">
+                         <input rows="5" type="text" name="message" placeholder="Enter Message" class="form-control input-Your Message" class="form-control input-sm">
+                        </div>
+                    </div>
+                     <div  class="row cf-ro">
+                        <div  class="col-sm-3"><label></label></div>
+                        <div class="col-sm-8">
+                         <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--  ************************* Footer  Starts Here ************************** -->
+
+    <footer class="container-fluid footer">
+        <div class="container">
+            <div class="row footerro">
+                <span class="tt">iPhone</span>
+                <p>
+                    <span><a href="">HOME</a></span>
+                    <span><a href="">ABOUT US</a></span>
+                    <span><a href="">SKILLS</a></span>
+                    <span><a href="">SERVICES</a></span>
+                    <span><a href="">PORTFOLIO</a></span>
+                 </p>
+                <a href="">Copyright © Smarteyeapps.com | All right reserved.</a>
+            </div>
+        </div>
+    </footer>
+
+
+    </body>
+
+
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</html>
